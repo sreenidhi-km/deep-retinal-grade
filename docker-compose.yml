@@ -1,0 +1,69 @@
+# =============================================================================
+# Deep Retina Grade - Docker Compose
+# Complete deployment with backend + frontend
+# =============================================================================
+
+version: '3.8'
+
+services:
+  # ===========================================
+  # Backend API (FastAPI)
+  # ===========================================
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: deep-retina-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models:ro
+      - ./artifacts:/app/artifacts
+      - ./results:/app/results:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DEVICE=cpu
+      - DR_DEMO_MODE=false
+      - DR_QUALITY_THRESHOLD=0.4
+      - DR_UNCERTAINTY_THRESHOLD=0.15
+      - DR_OOD_ENTROPY_THRESHOLD=1.5
+      - DR_MC_SAMPLES=5
+      - DR_RATE_LIMIT_MAX=60
+      - DR_RATE_LIMIT_WINDOW=60
+      - DR_ENSEMBLE_ENABLED=false
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    restart: unless-stopped
+    networks:
+      - retina-network
+
+  # ===========================================
+  # Frontend (React + Vite)
+  # ===========================================
+  frontend:
+    build:
+      context: ./app/frontend
+      dockerfile: Dockerfile
+    container_name: deep-retina-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    restart: unless-stopped
+    networks:
+      - retina-network
+
+networks:
+  retina-network:
+    driver: bridge
+
+volumes:
+  model-data:
+  artifact-data:

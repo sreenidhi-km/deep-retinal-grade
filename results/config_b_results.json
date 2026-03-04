@@ -1,0 +1,28 @@
+{
+  "config": "B - APTOS+DDR Combined",
+  "test_accuracy": 0.7851239669421488,
+  "test_qwk": 0.874477296185662,
+  "grade_3_recall": 0.375,
+  "grade_4_recall": 0.4489795918367347,
+  "per_class_recall": [
+    0.9697986577181208,
+    0.5245901639344263,
+    0.7272727272727273,
+    0.375,
+    0.4489795918367347
+  ],
+  "per_class_precision": [
+    0.9633333333333334,
+    0.4444444444444444,
+    0.7017543859649122,
+    0.4,
+    0.6875
+  ],
+  "training_time_minutes": 66.60389031966527,
+  "train_samples": 3878,
+  "val_samples": 779,
+  "test_samples": 605,
+  "best_val_kappa": 0.891613848456859,
+  "epochs_trained": 30,
+  "timestamp": "2026-02-01T00:54:38.763063"
+}

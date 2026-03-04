@@ -1,0 +1,55 @@
+{
+  "project": "Deep Retina Grade - Diabetic Retinopathy Grading System",
+  "created_at": "2026-01-17T15:03:01.536507",
+  "random_seed": 42,
+  "dataset": {
+    "name": "APTOS 2019 Blindness Detection",
+    "source": "Kaggle",
+    "total_images": 3662,
+    "image_format": "PNG",
+    "class_distribution": {
+      "No DR": 1805,
+      "Mild NPDR": 370,
+      "Moderate NPDR": 999,
+      "Severe NPDR": 193,
+      "Proliferative DR": 295
+    }
+  },
+  "splits": {
+    "train": {
+      "count": 2598,
+      "percentage": 70.9,
+      "file": "splits/train.csv",
+      "checksum": "87c22583998cffaea59176f059361616"
+    },
+    "validation": {
+      "count": 459,
+      "percentage": 12.5,
+      "file": "splits/val.csv",
+      "checksum": "ff376912405728c6b742ad967e14c4c3"
+    },
+    "test": {
+      "count": 605,
+      "percentage": 16.5,
+      "file": "splits/test.csv",
+      "checksum": "83e2e76e24559a21f409ef6fdea72e42",
+      "note": "SEALED - Do not use until final evaluation!"
+    }
+  },
+  "duplicate_check": {
+    "method": "pHash (Perceptual Hash)",
+    "unique_hashes": 3510,
+    "potential_duplicate_groups": 143,
+    "status": "143 groups found"
+  },
+  "class_imbalance": {
+    "majority_class": "Grade 0 (No DR)",
+    "minority_class": "Grade 3 (Severe NPDR)",
+    "imbalance_ratio": 9.4,
+    "mitigation": [
+      "Stratified splits",
+      "Quadratic Weighted Kappa loss",
+      "Class weighting"
+    ]
+  }
+}

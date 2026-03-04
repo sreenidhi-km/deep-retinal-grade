@@ -1,0 +1,48 @@
+[
+  {
+    "name": "HighSevereWeight",
+    "test_accuracy": 0.7735537190082644,
+    "test_kappa": 0.8750400885666282,
+    "test_severe_sensitivity": 0.7777777777777778,
+    "best_val_kappa": 0.8955721525740197,
+    "best_val_severe_sens": 0.819672131147541,
+    "config": {
+      "name": "HighSevereWeight",
+      "severe_weight_mult": 2.0,
+      "prolif_weight_mult": 2.5,
+      "focal_gamma": 2.5,
+      "lr": 0.0003,
+      "dropout": 0.4,
+      "batch_size": 32,
+      "epochs": 25,
+      "patience": 8,
+      "aug_level": "strong",
+      "use_mixup": true,
+      "mixup_alpha": 0.4,
+      "weight_decay": 0.0001
+    }
+  },
+  {
+    "name": "VeryHighSevereWeight",
+    "test_accuracy": 0.6661157024793388,
+    "test_kappa": 0.8054907113602371,
+    "test_severe_sensitivity": 0.8641975308641975,
+    "best_val_kappa": 0.8225919285642901,
+    "best_val_severe_sens": 0.9344262295081968,
+    "config": {
+      "name": "VeryHighSevereWeight",
+      "severe_weight_mult": 3.0,
+      "prolif_weight_mult": 3.5,
+      "focal_gamma": 3.0,
+      "lr": 0.0002,
+      "dropout": 0.35,
+      "batch_size": 32,
+      "epochs": 25,
+      "patience": 8,
+      "aug_level": "strong",
+      "use_mixup": true,
+      "mixup_alpha": 0.3,
+      "weight_decay": 0.0002
+    }
+  }
+]

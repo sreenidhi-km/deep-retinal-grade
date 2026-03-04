@@ -1,0 +1,50 @@
+{
+  "overall_metrics": {
+    "accuracy": 0.6512396694214876,
+    "qwk": 0.8109083401405732,
+    "n_samples": 605
+  },
+  "per_group_metrics": [
+    {
+      "Group": "Dark",
+      "N": 200,
+      "Accuracy": 0.615,
+      "QWK": 0.8004917456972251,
+      "Sensitivity": 0.7528089887640449,
+      "Specificity": 0.972972972972973
+    },
+    {
+      "Group": "Light",
+      "N": 206,
+      "Accuracy": 0.7281553398058253,
+      "QWK": 0.8304678715186675,
+      "Sensitivity": 0.6323529411764706,
+      "Specificity": 0.9855072463768116
+    },
+    {
+      "Group": "Medium",
+      "N": 199,
+      "Accuracy": 0.6080402010050251,
+      "QWK": 0.7922879637361326,
+      "Sensitivity": 0.7078651685393258,
+      "Specificity": 0.9818181818181818
+    }
+  ],
+  "fairness_metrics": {
+    "demographic_parity_ratio": 0.8350418760469012,
+    "accuracy_disparity": 0.12011513880080016,
+    "equalized_odds_ratio": 0.8399912203687445,
+    "sensitivity_disparity": 0.12045604758757433,
+    "specificity_disparity": 0.012534273403838614,
+    "qwk_disparity": 0.03817990778253488,
+    "worst_group_accuracy": "Medium",
+    "worst_group_sensitivity": "Light",
+    "passes_80_rule_accuracy": true,
+    "passes_80_rule_sensitivity": true
+  },
+  "methodology": {
+    "pigmentation_proxy": "Mean LAB Luminance",
+    "stratification": "Tertile-based (33rd/66th percentile)",
+    "fairness_threshold": "80% Rule"
+  }
+}

@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #059669;
+  --danger-color: #dc2626;
+  --warning-color: #d97706;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #f3f4f6;
+  margin: 0;
+  padding: 0;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+}
+
+.card {
+  @apply bg-white rounded-xl shadow-lg p-6;
+}
+
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg 
+         transition-all duration-200 transform hover:scale-105 disabled:opacity-50 
+         disabled:cursor-not-allowed disabled:transform-none;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-3 px-6 rounded-lg 
+         transition-all duration-200;
+}
+
+.grade-badge {
+  @apply inline-flex items-center px-4 py-2 rounded-full text-sm font-bold;
+}
+
+.grade-0 { @apply bg-green-100 text-green-800; }
+.grade-1 { @apply bg-yellow-100 text-yellow-800; }
+.grade-2 { @apply bg-orange-100 text-orange-800; }
+.grade-3 { @apply bg-red-100 text-red-800; }
+.grade-4 { @apply bg-red-200 text-red-900; }
+
+.upload-zone {
+  @apply border-2 border-dashed border-gray-300 rounded-xl p-8 text-center 
+         cursor-pointer transition-all duration-200 hover:border-blue-500 
+         hover:bg-blue-50;
+}
+
+.upload-zone.active {
+  @apply border-blue-500 bg-blue-50;
+}

@@ -1,0 +1,61 @@
+# Deep Retina Grade - Requirements
+# Python 3.10+ recommended
+
+# Core Deep Learning
+torch>=2.1.0
+torchvision>=0.16.0
+timm>=0.9.12
+
+# Data Processing
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+opencv-python>=4.8.0
+Pillow>=10.0.0
+albumentations>=1.3.1
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.18.0
+
+# Explainability (XAI)
+captum>=0.7.0
+lime>=0.2.0.1
+grad-cam>=1.4.8
+
+# Image Hashing (duplicate detection)
+imagehash>=4.3.1
+
+# API & Deployment
+fastapi>=0.109.0
+uvicorn>=0.27.0
+python-multipart>=0.0.6
+
+# PDF Report Generation
+reportlab>=4.0.0
+
+# Metrics
+scipy>=1.11.0
+
+# Progress bars
+tqdm>=4.66.0
+
+# Jupyter
+jupyter>=1.0.0
+ipywidgets>=8.1.0
+
+# Configuration
+python-dotenv>=1.0.0
+pyyaml>=6.0.1
+
+# Testing & Quality
+pytest>=7.4.0
+pytest-cov>=4.1.0
+black>=23.0.0
+flake8>=6.0.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+httpx>=0.25.0
